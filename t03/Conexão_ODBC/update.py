@@ -1,18 +1,22 @@
 from conexao import ConexaoBanco
 
-conn = ConexaoBanco()
-cur = conn.cursor()
+cone = ConexaoBanco()
+
+cur = cone.cursor()
 
 def AtualizarResponsavelProjeto(codProjeto, novoResponsavel):
-    update = '''
+    update =    '''
         UPDATE projeto SET codresponsavel = %s
         WHERE codigo = %s;
-    '''
+                '''
     value = (novoResponsavel, codProjeto)
+    
     cur.execute(update,value)
-    conn.commit()
+    
+    cone.commit()
 
 AtualizarResponsavelProjeto(codProjeto=2, novoResponsavel=4)
 
 cur.close()
-conn.close()
+
+cone.close()
