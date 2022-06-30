@@ -4,8 +4,6 @@ from conexao import *
 
 conexaoBanco()
 
-
-
 def createAtividade (codProjeto, dataFim, dataInicio, descricao) :
     Atividade.create(
         codprojeto = codProjeto,
@@ -16,8 +14,8 @@ def createAtividade (codProjeto, dataFim, dataInicio, descricao) :
     
 createAtividade(
     codProjeto = 4,
-    dataFim=date(2022, 6,19), 
-    dataInicio = date(2022,6,27), 
+    dataFim=date(2022, 6,30), 
+    dataInicio = date(2022,6,19), 
     descricao="Tarefa 3"
 )
 
