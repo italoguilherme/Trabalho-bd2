@@ -5,19 +5,19 @@ dbname = 'AtividadesBD'
 user = 'postgres'
 password = 'postgres'
 port = '5432'
-conn = None
+cone = None
 cur = None
 
 def ConexaoBanco():
     try:
-        conn =psycopg2.connect(
+        cone =psycopg2.connect(
             host = host,
             dbname = dbname,
             user = user,
             password = password,
             port = port
         )
-        return conn
+        return cone
 
     except Exception as error:
-        print(error)
+        print(errorcod)
