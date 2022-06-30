@@ -1,19 +1,22 @@
 from conexao import ConexaoBanco
 
-conn = ConexaoBanco()
+cone = ConexaoBanco()
+
 cur = conn.cursor()
 
 def selectProjetoJoinAtividades():
-    select = '''
+    select =    '''
         SELECT PROJETO.CODIGO, PROJETO.DESCRICAO, ATIVIDADE.DESCRICAO
         FROM PROJETO INNER JOIN ATIVIDADE     
         ON PROJETO.CODIGO = ATIVIDADE.CODPROJETO;
-    '''
+                '''
 
     cur.execute(select)
-    conn.commit()
+    
+    cone.commit()
 
 selectProjetoJoinAtividades()
 
 cur.close()
-conn.close()
+
+cone.close()
