@@ -2,6 +2,7 @@ from datetime import date
 from conexao import ConexaoBanco
 
 cone = ConexaoBanco()
+
 cur = cone.cursor()
 
 def CreateAtividade(codProjeto, dataFim, dataInicio, descricao):
@@ -10,7 +11,9 @@ def CreateAtividade(codProjeto, dataFim, dataInicio, descricao):
         VALUES (%s, %s, %s, %s);
     '''
     value = (codProjeto, dataFim, dataInicio, descricao)
+    
     cur.execute(insert, value)
+    
     cone.commit()
 
 
@@ -22,4 +25,5 @@ CreateAtividade(
 )
 
 cur.close()
+
 cone.close()
